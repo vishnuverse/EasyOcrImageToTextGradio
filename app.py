@@ -14,11 +14,11 @@ with block:
             gr.Markdown("## <p align='center'> OCR: Image ⮕ Text </p>")
     with gr.Row():
         with gr.Column():
-            input_image = gr.Image(type="pil")
+            input_image = gr.Image(type="numpy")
             input_lan = gr.CheckboxGroup(choices, type="value", value=['en'], label='language')
             button = gr.Button("Submit")
         with gr.Column():
-            output_image = gr.Image(type="pil")
+            output_image = gr.Image(type="numpy")
             output_dataframe = gr.Dataframe(headers=['Coordinates', 'Text', 'Confidence'])
 
         button.click(fn=inference,
